@@ -20,56 +20,85 @@ HOMES = 6
 DONES = 6 
 PERSONES = HOMES + DONES
 
-semDones = threading.Semaphore(0)  # empieza desbloqueado
-semHomes = threading.Semaphore(0)  # empieza desbloquead
-semBany = threading.Semaphore(3) # empieza desbloqueado
-
+semDones = threading.Semaphore(1)  # empieza desbloqueado
+semHomes = threading.Semaphore(1)  # empieza desbloquead
+semBany = threading.Semaphore(1) # empieza desbloqueado
+semPersonesBany = threading.Semaphore(1)
 nomsHomes = ["GORI", "COSME", "JAUME", "DAMIA", "ANTONI", "BERNAT"]
 nomsDones = ["AINA", "GERONIA", "CATALINA", "ELISABET", "JOANA", "FRANCESCA"]
 personesBany = 0
+cont = 0
 
-def dona(i):
-    print("\t"+ nomsDones[i-6] + " arriba al despatx")
-    threading.current_thread().name = nomsDones[i-6]
+def dona():
+    semDones.acquire()
+    threading.current_thread().name = nomsDones.pop()
+    semDones.release()
+
+    print("\t"+ threading.current_thread().name + " arriba al despatx")
+    time.sleep(random.randint(5, 10) / 100) 
     accedirAlBany()
-    print("\t" + threading.current_thread().name + "acaba la feina")
+    time.sleep(random.randint(5, 10) / 100) 
+    time.sleep(random.randint(5, 10) / 100) 
+    print("\t" + threading.current_thread().name + " acaba la feina")
 
+def home():
+    semHomes.acquire()
+    threading.current_thread().name = nomsHomes.pop()
+    semHomes.release()
 
-def home(i):
-    print(nomsHomes[i] + " arriba al despatx")
-    threading.current_thread().name = nomsHomes[i]
+    print(threading.current_thread().name + " arriba al despatx")
+    time.sleep(random.randint(5, 10) / 100) 
     accedirAlBany()
-    print(threading.current_thread().name + "acaba la feina")
+    time.sleep(random.randint(5, 10) / 100) 
+    time.sleep(random.randint(5, 10) / 100) 
+    print(threading.current_thread().name + " acaba la feina")
     
 def accedirAlBany():
     global personesBany
 
-    semBany.acquire()
-    personesBany = personesBany + 1
-    print(threading.current_thread().name + " entra. Personas en el baño: ", personesBany)
+    semPersonesBany.acquire()
     time.sleep(random.randint(5, 10) / 100) 
-    semBany.release()
-    personesBany -=1
+    if personesBany == 3:
+        semPersonesBany.release()
+        semBany.acquire()
+
+    if personesBany < 3:
+        personesBany = personesBany + 1
+        print(threading.current_thread().name + " entra. Personas en el baño: ", personesBany) 
+        semPersonesBany.release()
+
+    time.sleep(random.randint(5, 10) / 100) 
+    time.sleep(random.randint(5, 10) / 100) 
+    time.sleep(random.randint(5, 10) / 100) 
+    time.sleep(random.randint(5, 10) / 100) 
+
+    semPersonesBany.acquire()
+    time.sleep(random.randint(5, 10) / 100) 
+    personesBany = personesBany - 1
+    print(threading.current_thread().name + " surt.")
+    if personesBany < 3:
+        semBany.release()
 
     if personesBany == 0:
-        print("*****El baño esta vacio")
-
-
-
-funcions = {0: home, 1: dona}
+        print("***** El baño esta vacio")
+    semPersonesBany.release()
 
 def main():
+    global cont
     threads = []
 
-    func = funcions[0]
-
-    for i in range(PERSONES):
+    for i in range(HOMES):
         # Create new threads
-        t = threading.Thread(target=func(i))
+        t = threading.Thread(target=home)
         threads.append(t)
         t.start() # start the thread
-        if (i == 5):
-            func = funcions[1]
+    cont = 0
+
+    for i in range(DONES):
+        # Create new threads
+        t = threading.Thread(target=dona)
+        threads.append(t)
+        t.start() # start the thread
 
     # Wait for all threads to complete
     for t in threads:
