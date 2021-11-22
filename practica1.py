@@ -39,11 +39,11 @@ def dona():
     semDones.release()
 
     print("\t"+ threading.current_thread().name + " arriba al despatx")
-    time.sleep(random.randint(5, 10) / 100) 
+    time.sleep(random.randint(5, 10) / 1000) 
 
     for i in range(VEGADES_AL_BANY): 
         print("\t"+ threading.current_thread().name + " treballa")
-        time.sleep(random.randint(5, 10) / 100) # esta trabajando
+        time.sleep(random.randint(5, 10) / 1000) # esta trabajando
 
         semDones.acquire()  # sirve para proteger el contador de dones 
         if contadorDones == 0:
@@ -58,7 +58,7 @@ def dona():
         semDones.release()
 
         # esta en el baño 
-        time.sleep(random.randint(5, 10) / 100) # esta 
+        time.sleep(random.randint(5, 10) / 10000) # esta 
 
         semDones.acquire()
         contadorDones -= 1
@@ -73,7 +73,7 @@ def dona():
             semBuit.release()
         semDones.release()
 
-        time.sleep(random.randint(5, 10) / 100) # esta trabajando
+        time.sleep(random.randint(5, 10) / 1000) # esta trabajando
     print("\t" + threading.current_thread().name + " acaba la feina")
     
 
@@ -84,11 +84,11 @@ def home():
     semHomes.release()
     
     print(threading.current_thread().name + " arriba al despatx")
-    time.sleep(random.randint(5, 10) / 100) 
+    time.sleep(random.randint(5, 10) / 1000) 
 
     for i in range(VEGADES_AL_BANY): 
         print(threading.current_thread().name + " treballa")
-        time.sleep(random.randint(5, 10) / 100) # esta trabajando
+        time.sleep(random.randint(5, 10) / 1000) # esta trabajando
         
 
         semHomes.acquire()
@@ -103,7 +103,7 @@ def home():
         print(threading.current_thread().name + " entra " + str(i+1) + "/2. Personas en el baño: ", contHomes) 
         semHomes.release()
         # esta en el baño 
-        time.sleep(random.randint(5, 10) / 100) # esta 
+        time.sleep(random.randint(5, 10) / 10000) # esta 
 
         semHomes.acquire()
         contHomes -= 1
@@ -118,7 +118,7 @@ def home():
         semHomes.release()
 
 
-        time.sleep(random.randint(5, 10) / 100) # esta trabajando
+        time.sleep(random.randint(5, 10) / 1000) # esta trabajando
     print(threading.current_thread().name + " acaba la feina")
     
 def main():
