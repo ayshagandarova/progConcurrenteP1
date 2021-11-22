@@ -19,72 +19,91 @@ MAX_EN_BANYO = 3
 HOMES = 6
 DONES = 6 
 PERSONES = HOMES + DONES
+VEGADES_AL_BANY = 2
 
-semDones = threading.Semaphore(1)  # empieza desbloqueado
-semHomes = threading.Semaphore(1)  # empieza desbloquead
-semBany = threading.Semaphore(1) # empieza desbloqueado
+semContadorDones = threading.Semaphore(3) 
+semContadorHomes = threading.Semaphore(3)  
+semDones = threading.Semaphore(1) 
+semHomes = threading.Semaphore(1) 
+semBuit = threading.Semaphore(1)
 
-semPersonesBany = threading.Semaphore(1)
+contador = 0
 nomsHomes = ["GORI", "COSME", "JAUME", "DAMIA", "ANTONI", "BERNAT"]
 nomsDones = ["AINA", "GERONIA", "CATALINA", "ELISABET", "JOANA", "FRANCESCA"]
-personesBany = 0
-cont = 0
 
 def dona():
+    global contador
     semDones.acquire()
     threading.current_thread().name = nomsDones.pop()
     semDones.release()
 
     print("\t"+ threading.current_thread().name + " arriba al despatx")
     time.sleep(random.randint(5, 10) / 100) 
-    accedirAlBany()
-    time.sleep(random.randint(5, 10) / 100) 
-    time.sleep(random.randint(5, 10) / 100) 
+
+    for i in range(VEGADES_AL_BANY): 
+        print("\t"+ threading.current_thread().name + " treballa")
+        time.sleep(random.randint(5, 10) / 100) # esta trabajando
+
+        semDones.acquire()  # sirve para proteger el contador de dones 
+        
+        if contador < 3:
+            contador += 1
+            print("\t" + threading.current_thread().name + " entra " + str(i+1) + "/2. Personas en el baño: ", contador) 
+        semDones.release()
+        
+
+        # esta en el baño 
+        time.sleep(random.randint(5, 10) / 100) # esta 
+
+        semDones.acquire()
+        contador -= 1
+        print("\t" + threading.current_thread().name + " surt.")
+
+        if contador == 0:
+            print("***** El baño esta vacio")
+        semDones.release()
+
+        time.sleep(random.randint(5, 10) / 100) # esta trabajando
     print("\t" + threading.current_thread().name + " acaba la feina")
+    
 
 def home():
+    global contador
     semHomes.acquire()
     threading.current_thread().name = nomsHomes.pop()
     semHomes.release()
-
+    
     print(threading.current_thread().name + " arriba al despatx")
     time.sleep(random.randint(5, 10) / 100) 
-    accedirAlBany()
-    time.sleep(random.randint(5, 10) / 100) 
-    time.sleep(random.randint(5, 10) / 100) 
+
+    for i in range(VEGADES_AL_BANY): 
+        print(threading.current_thread().name + " treballa")
+        time.sleep(random.randint(5, 10) / 100) # esta trabajando
+        
+
+        semHomes.acquire()
+        
+        if contador <3:
+            contador += 1
+            print(threading.current_thread().name + " entra " + str(i+1) + "/2. Personas en el baño: ", contador) 
+        semHomes.release()
+
+        # esta en el baño 
+        time.sleep(random.randint(5, 10) / 100) # esta 
+
+        semHomes.acquire()
+        contador -= 1
+        print(threading.current_thread().name + " surt.")
+        if contador == 0:
+            print("***** El baño esta vacio")
+        semHomes.release()
+
+
+        time.sleep(random.randint(5, 10) / 100) # esta trabajando
     print(threading.current_thread().name + " acaba la feina")
     
-def accedirAlBany():
-    global personesBany
-
-    semPersonesBany.acquire()
-    time.sleep(random.randint(5, 10) / 100) 
-    if personesBany == 3:
-        semPersonesBany.release()
-        semBany.acquire()
-
-    if personesBany < 3:
-        personesBany = personesBany + 1
-        print(threading.current_thread().name + " entra. Personas en el baño: ", personesBany) 
-        semPersonesBany.release()
-
-    time.sleep(random.randint(5, 10) / 100) 
-    time.sleep(random.randint(5, 10) / 100) 
-    time.sleep(random.randint(5, 10) / 100) 
-    time.sleep(random.randint(5, 10) / 100) 
-
-    semPersonesBany.acquire()
-    time.sleep(random.randint(5, 10) / 100) 
-    personesBany = personesBany - 1
-    print(threading.current_thread().name + " surt.")
-    if personesBany < 3:
-        semBany.release()
-
-    if personesBany == 0:
-        print("***** El baño esta vacio")
-    semPersonesBany.release()
-
 def main():
+    global cont
     threads = []
 
     for i in range(HOMES):
