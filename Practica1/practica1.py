@@ -51,7 +51,7 @@ def dona():
 
         # Se pone a trabajar
         print("\t"+ threading.current_thread().name + " treballa")
-        time.sleep(random.randint(5, 10) / 100000) # esta trabajando
+        time.sleep(random.randint(5, 10) / 10000) # esta trabajando
 
         # Comprueba que el baño está vacío y desocupado por el otro género
         semDones.acquire() 
@@ -102,14 +102,14 @@ def home():
     
     # Se prepara para entrar a trabajar al despacho
     print(threading.current_thread().name + " arriba al despatx")
-    time.sleep(random.randint(5, 10) / 1000)    
+    time.sleep(random.randint(5, 10) / 10000)    
 
     # Los dos accesos de los procesos "hilo" de los hombres al baño
     for i in range(VEGADES_AL_BANY): 
 
         # Se pone a trabajar
         print(threading.current_thread().name + " treballa")
-        time.sleep(random.randint(5, 10) / 1000) 
+        time.sleep(random.randint(5, 10) / 10000) 
 
         # Comprueba que el baño está vacío y desocupado por el otro género
         semHomes.acquire()
