@@ -1,3 +1,5 @@
+# Laura Cavero y Aisha Gandarova
+# Enlace del video: https://www.dropbox.com/s/1sf1fk05vo37s5l/Pr%C3%A1ctica%201%3A%20Ba%C3%B1o%20mixto%20%28sem%C3%A1foros%29.mp4?dl=0
 # ENUNCIADO PRÁCTICA 1 - BAÑO MIXTO:
 # En un despacho de abogados trabajan 6 hombres y 6 mujeres donde existe un único baño mixto.
 # En este, no pueden haber hombres y mujeres a la vez, de la misma forma, solo puede haber un 
@@ -17,16 +19,15 @@ import random
 MAX_EN_BANYO = 3
 HOMES = 6
 DONES = 6 
-PERSONES = HOMES + DONES
 VEGADES_AL_BANY = 2
 
 # SEMÁFOROS
-semContadorDones = threading.Semaphore(MAX_EN_BANYO)  # explicar que hace cada semaforo
-semContadorHomes = threading.Semaphore(MAX_EN_BANYO)  
-semDones = threading.Semaphore(1) 
-semHomes = threading.Semaphore(1) 
-semBuit = threading.Semaphore(1)
-semInan = threading.Semaphore(1)
+semContadorDones = threading.Semaphore(MAX_EN_BANYO)  # Semáforo contador de mujeres (3)
+semContadorHomes = threading.Semaphore(MAX_EN_BANYO)  # Semáforo contador de hombres (3)
+semDones = threading.Semaphore(1)  # Semáforo que protege la variable contador de las mujeres
+semHomes = threading.Semaphore(1)  # Semáforo que protege la variable contador de los hombres
+semBuit = threading.Semaphore(1)   # Semáforo que bloquea el baño para que solo un género pueda usarlo
+semInan = threading.Semaphore(1)   # Semáforo que permite que no haya inanición 
 
 # VARIABLES AUXILIARES
 contadorHomes = 0
@@ -57,7 +58,6 @@ def dona():
         semDones.acquire() 
         if contadorDones == 0:
             semBuit.acquire()  # bloqueamos para que otro género no pueda ocuparlo
-        contadorDones += 1
         semDones.release()
 
         semInan.release()
@@ -67,7 +67,7 @@ def dona():
         semContadorDones.acquire()
         
         semDones.acquire()
-        time.sleep(random.randint(5, 10) / 1000) 
+        contadorDones += 1
         print("\t" + threading.current_thread().name + " entra " + str(i+1) + "/2. Personas en el baño: ", contadorDones) 
         semDones.release()
 
@@ -91,8 +91,6 @@ def dona():
             semBuit.release()
         else:
             semDones.release()
-
-        time.sleep(random.randint(5, 10) / 10000)  # sigue trabajando
 
 
     # Acaba de trabajar después de haber entrado dos veces al baño
@@ -118,7 +116,6 @@ def home():
         semHomes.acquire()
         if contadorHomes == 0:
             semBuit.acquire()  # bloqueamos para que otro género no pueda ocuparlo
-        contadorHomes += 1
         semHomes.release()
 
         semInan.release()
@@ -127,7 +124,7 @@ def home():
         semContadorHomes.acquire()
 
         semHomes.acquire()
-        time.sleep(random.randint(5, 10) / 1000) 
+        contadorHomes += 1
         print(threading.current_thread().name + " entra " + str(i+1) + "/2. Personas en el baño: ", contadorHomes) 
         semHomes.release()
 
@@ -150,14 +147,11 @@ def home():
         else:
             semHomes.release()
 
-        time.sleep(random.randint(5, 10) / 10000)  # sigue trabajando
-
     # Acaba de trabajar después de haber entrado dos veces al baño
     print(threading.current_thread().name + " acaba la feina")
 
 # PROGRAMA PRINCIPAL    
 def main():
-    global cont
     threads = []
 
     # Lanzamos los procesos "hilo" que serán los hombres
