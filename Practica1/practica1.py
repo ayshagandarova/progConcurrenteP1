@@ -21,8 +21,8 @@ PERSONES = HOMES + DONES
 VEGADES_AL_BANY = 2
 
 # SEMÁFOROS
-semContadorDones = threading.Semaphore(3)  # explicar que hace cada semaforo
-semContadorHomes = threading.Semaphore(3)  
+semContadorDones = threading.Semaphore(MAX_EN_BANYO)  # explicar que hace cada semaforo
+semContadorHomes = threading.Semaphore(MAX_EN_BANYO)  
 semDones = threading.Semaphore(1) 
 semHomes = threading.Semaphore(1) 
 semBuit = threading.Semaphore(1)
@@ -42,21 +42,21 @@ def dona():
 
     # Se prepara para entrar a trabajar al despacho
     print("\t"+ threading.current_thread().name + " arriba al despatx")
-
+    time.sleep(random.randint(5, 10) / 100000)  
 
     # Los dos accesos de los procesos "hilo" de las mujeres al baño
     for i in range(VEGADES_AL_BANY): 
 
         # Se pone a trabajar
         print("\t"+ threading.current_thread().name + " treballa")
-        time.sleep(random.randint(5, 10) / 10000)
+        time.sleep(random.randint(5, 10) / 100000)
         
-        semInan.acquire()
+        semInan.acquire()  # Semáforo que controla que no haya inancición entre hombres y mujeres
 
         # Comprueba que el baño está vacío y desocupado por el otro género
         semDones.acquire() 
         if contadorDones == 0:
-            semBuit.acquire()
+            semBuit.acquire()  # bloqueamos para que otro género no pueda ocuparlo
         contadorDones += 1
         semDones.release()
 
@@ -65,9 +65,9 @@ def dona():
         #SECCIÓN CRÍTICA
         # Permite la entrada de un máximo de tres mujeres
         semContadorDones.acquire()
-        # Incrementamos la correspondiente variable de control de mujeres dentro del baño,
-        # además de imprimir el mensaje correspondiente
+        
         semDones.acquire()
+        time.sleep(random.randint(5, 10) / 1000) 
         print("\t" + threading.current_thread().name + " entra " + str(i+1) + "/2. Personas en el baño: ", contadorDones) 
         semDones.release()
 
@@ -83,14 +83,16 @@ def dona():
         contadorDones -= 1
         print("\t" + threading.current_thread().name + " surt.")
         
-
         # Comprueba que el baño está vacío y lo desbloquea para el otro género
      
         if contadorDones == 0:
+            semDones.release()
             print("***** El baño esta vacio")
             semBuit.release()
-        semDones.release()
-        time.sleep(random.randint(5, 10) / 10000)
+        else:
+            semDones.release()
+
+        time.sleep(random.randint(5, 10) / 10000)  # sigue trabajando
 
 
     # Acaba de trabajar después de haber entrado dos veces al baño
@@ -102,19 +104,20 @@ def home():
     
     # Se prepara para entrar a trabajar al despacho
     print(threading.current_thread().name + " arriba al despatx")
+    time.sleep(random.randint(5, 10) / 100000)  
 
     # Los dos accesos de los procesos "hilo" de los hombres al baño
     for i in range(VEGADES_AL_BANY): 
 
         # Se pone a trabajar
         print(threading.current_thread().name + " treballa")
+        time.sleep(random.randint(5, 10) / 100000)
 
-
-        semInan.acquire()
+        semInan.acquire()   # Semáforo que controla que no haya inancición entre hombres y mujeres
         # Comprueba que el baño está vacío y desocupado por el otro género
         semHomes.acquire()
         if contadorHomes == 0:
-            semBuit.acquire()
+            semBuit.acquire()  # bloqueamos para que otro género no pueda ocuparlo
         contadorHomes += 1
         semHomes.release()
 
@@ -123,16 +126,14 @@ def home():
         # Permite la entrada de un máximo de tres hombres
         semContadorHomes.acquire()
 
-        # Incrementamos la correspondiente variable de control de hombres dentro del baño,
-        # además de imprimir el mensaje correspondiente
         semHomes.acquire()
-        
+        time.sleep(random.randint(5, 10) / 1000) 
         print(threading.current_thread().name + " entra " + str(i+1) + "/2. Personas en el baño: ", contadorHomes) 
         semHomes.release()
 
         time.sleep(random.randint(5, 10) / 10000) # Se encuentra en el baño
 
-         # Desbloqueamos la entrada de control de un máximo de tres hombres
+        # Desbloqueamos la entrada de control de un máximo de tres hombres
         semContadorHomes.release()
 
         # Decrementamos la correspondiente variable de control de hombres dentro del baño,
@@ -142,12 +143,14 @@ def home():
         print(threading.current_thread().name + " surt.")
 
         # Comprueba que el baño está vacío y lo desbloquea para el otro género
-
         if contadorHomes == 0:
+            semHomes.release()
             print("***** El baño esta vacio")
             semBuit.release()
-        semHomes.release()
+        else:
+            semHomes.release()
 
+        time.sleep(random.randint(5, 10) / 10000)  # sigue trabajando
 
     # Acaba de trabajar después de haber entrado dos veces al baño
     print(threading.current_thread().name + " acaba la feina")
@@ -170,6 +173,7 @@ def main():
         t.start()
 
     # Esperamos a que todos los procesos "hilo" terminen
+    
     for t in threads:
         t.join()
 
