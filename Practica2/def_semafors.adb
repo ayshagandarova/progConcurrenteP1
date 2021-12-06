@@ -1,7 +1,8 @@
 -- AUTOR@S: LAURA CAVERO y AYSHA GANDAROVA
 
-package def_semafors is
-   protected body Semafor (Inicial: Natural) is
+package body def_semafors is
+
+   protected body Semafor is
       entry Wait when Contador > 0 is
       begin
          Contador := Contador - 1;
@@ -10,7 +11,7 @@ package def_semafors is
       procedure Signal is
       begin
          Contador := Contador + 1;
-      end Signal
+      end Signal;
 
    end Semafor;
 end def_semafors;
