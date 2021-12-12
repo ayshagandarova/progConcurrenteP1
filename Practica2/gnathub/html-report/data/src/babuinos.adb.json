@@ -1,0 +1,880 @@
+{
+  "project": "Default",
+  "filename": "babuinos.adb",
+  "source_dir": "C:\\Users\\aurad\\Documents\\GitHub\\progConcurrenteP1\\Practica2",
+  "full_path": "C:\\Users\\aurad\\Documents\\GitHub\\progConcurrenteP1\\Practica2\\babuinos.adb",
+  "metrics": [
+    {
+      "rule": {
+        "id": 5,
+        "name": "all lines",
+        "tool_id": 2
+      },
+      "value": "109"
+    },
+    {
+      "rule": {
+        "id": 6,
+        "name": "code lines",
+        "tool_id": 2
+      },
+      "value": "84"
+    },
+    {
+      "rule": {
+        "id": 7,
+        "name": "comment lines",
+        "tool_id": 2
+      },
+      "value": "3"
+    },
+    {
+      "rule": {
+        "id": 8,
+        "name": "end-of-line comments",
+        "tool_id": 2
+      },
+      "value": "6"
+    },
+    {
+      "rule": {
+        "id": 9,
+        "name": "comment percentage",
+        "tool_id": 2
+      },
+      "value": "10.34"
+    },
+    {
+      "rule": {
+        "id": 10,
+        "name": "blank lines",
+        "tool_id": 2
+      },
+      "value": "22"
+    },
+    {
+      "rule": {
+        "id": 11,
+        "name": "Average lines in body",
+        "tool_id": 2
+      },
+      "value": "47.00"
+    },
+    {
+      "rule": {
+        "id": 12,
+        "name": "spark lines",
+        "tool_id": 2
+      },
+      "value": "0"
+    },
+    {
+      "rule": {
+        "id": 27,
+        "name": "statement complexity",
+        "tool_id": 2
+      },
+      "value": "3.00"
+    },
+    {
+      "rule": {
+        "id": 28,
+        "name": "expression complexity",
+        "tool_id": 2
+      },
+      "value": "0.00"
+    },
+    {
+      "rule": {
+        "id": 29,
+        "name": "cyclomatic complexity",
+        "tool_id": 2
+      },
+      "value": "3.00"
+    },
+    {
+      "rule": {
+        "id": 30,
+        "name": "essential complexity",
+        "tool_id": 2
+      },
+      "value": "1.00"
+    },
+    {
+      "rule": {
+        "id": 32,
+        "name": "maximum loop nesting",
+        "tool_id": 2
+      },
+      "value": "1.00"
+    }
+  ],
+  "coverage": null,
+  "messages": null,
+  "annotations": null,
+  "lines": [
+    {
+      "number": 1,
+      "content": "-- AUTOR@S: LAURA CAVERO y AISHA GANDAROVA",
+      "html_content": "<span class=\"c1\">-- AUTOR@S: LAURA CAVERO y AISHA GANDAROVA</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 2,
+      "content": "",
+      "html_content": "",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 3,
+      "content": "With Ada.Text_IO; Use Ada.Text_IO;",
+      "html_content": "<span class=\"kn\">With</span> <span class=\"nn\">Ada.Text_IO</span><span class=\"p\">;</span> <span class=\"kn\">Use</span> <span class=\"nn\">Ada.Text_IO</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 4,
+      "content": "With def_semafors; Use def_semafors;",
+      "html_content": "<span class=\"kn\">With</span> <span class=\"nn\">def_semafors</span><span class=\"p\">;</span> <span class=\"kn\">Use</span> <span class=\"nn\">def_semafors</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 5,
+      "content": "With ada.Numerics.Discrete_Random;",
+      "html_content": "<span class=\"kn\">With</span> <span class=\"nn\">ada.Numerics.Discrete_Random</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 6,
+      "content": "",
+      "html_content": "",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 7,
+      "content": "procedure Babuinos is",
+      "html_content": "<span class=\"kd\">procedure</span> <span class=\"nf\">Babuinos</span> <span class=\"kr\">is</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 8,
+      "content": "   type randRange is range 1..100;",
+      "html_content": "   <span class=\"kd\">type</span> <span class=\"kt\">randRange</span> <span class=\"kr\">is</span> <span class=\"kr\">range</span> <span class=\"mf\">1.</span><span class=\"p\">.</span><span class=\"mi\">100</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 9,
+      "content": "   package Rand_Int is new ada.numerics.discrete_random(randRange);",
+      "html_content": "   <span class=\"kd\">package</span> <span class=\"nc\">Rand_Int</span> <span class=\"kr\">is new</span> <span class=\"nc\">ada.numerics.discrete_random</span><span class=\"p\">(</span>randRange<span class=\"p\">);</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 10,
+      "content": "   use Rand_Int;",
+      "html_content": "   <span class=\"kn\">use</span> <span class=\"nn\">Rand_Int</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 11,
+      "content": "   gen : Generator;",
+      "html_content": "   <span class=\"n\">gen</span> <span class=\"p\">:</span> <span class=\"kt\">Generator</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 12,
+      "content": "   num : randRange;",
+      "html_content": "   <span class=\"n\">num</span> <span class=\"p\">:</span> <span class=\"n\">randRange</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 13,
+      "content": "",
+      "html_content": "",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 14,
+      "content": "   semContNord: Semafor(3);",
+      "html_content": "   <span class=\"n\">semContNord</span><span class=\"p\">:</span> <span class=\"n\">Semafor</span><span class=\"p\">(</span><span class=\"mi\">3</span><span class=\"p\">);</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 15,
+      "content": "   semContSud: Semafor(3);",
+      "html_content": "   <span class=\"n\">semContSud</span><span class=\"p\">:</span> <span class=\"n\">Semafor</span><span class=\"p\">(</span><span class=\"mi\">3</span><span class=\"p\">);</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 16,
+      "content": "   semBabuiNord: Semafor(1);",
+      "html_content": "   <span class=\"n\">semBabuiNord</span><span class=\"p\">:</span> <span class=\"n\">Semafor</span><span class=\"p\">(</span><span class=\"mi\">1</span><span class=\"p\">);</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 17,
+      "content": "   semBabuiSud: Semafor(1);",
+      "html_content": "   <span class=\"n\">semBabuiSud</span><span class=\"p\">:</span> <span class=\"n\">Semafor</span><span class=\"p\">(</span><span class=\"mi\">1</span><span class=\"p\">);</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 18,
+      "content": "   semCordaBuit: Semafor(1);",
+      "html_content": "   <span class=\"n\">semCordaBuit</span><span class=\"p\">:</span> <span class=\"n\">Semafor</span><span class=\"p\">(</span><span class=\"mi\">1</span><span class=\"p\">);</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 19,
+      "content": "",
+      "html_content": "",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 20,
+      "content": "   task type BabuinoNord;",
+      "html_content": "   <span class=\"kd\">task</span> <span class=\"kd\">type</span> <span class=\"kt\">BabuinoNord</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 21,
+      "content": "   task type BabuinoSud;",
+      "html_content": "   <span class=\"kd\">task</span> <span class=\"kd\">type</span> <span class=\"kt\">BabuinoSud</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 22,
+      "content": "",
+      "html_content": "",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 23,
+      "content": "   task body BabuinoNord is",
+      "html_content": "   <span class=\"kd\">task</span> <span class=\"kr\">body</span> <span class=\"n\">BabuinoNord</span> <span class=\"kr\">is</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 24,
+      "content": "      contadorN: Natural := 0;",
+      "html_content": "      <span class=\"n\">contadorN</span><span class=\"p\">:</span> <span class=\"kt\">Natural</span> <span class=\"p\">:=</span> <span class=\"mi\">0</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 25,
+      "content": "   begin",
+      "html_content": "   <span class=\"kr\">begin</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 26,
+      "content": "      for i in 1..5 loop",
+      "html_content": "      <span class=\"kr\">for</span> <span class=\"n\">i</span> <span class=\"ow\">in</span> <span class=\"mf\">1.</span><span class=\"p\">.</span><span class=\"mi\">5</span> <span class=\"kr\">loop</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 27,
+      "content": "         reset(gen);",
+      "html_content": "         <span class=\"n\">reset</span><span class=\"p\">(</span><span class=\"n\">gen</span><span class=\"p\">);</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 28,
+      "content": "         num:= Random(gen);",
+      "html_content": "         <span class=\"n\">num</span><span class=\"p\">:=</span> <span class=\"n\">Random</span><span class=\"p\">(</span><span class=\"n\">gen</span><span class=\"p\">);</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 29,
+      "content": "",
+      "html_content": "",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 30,
+      "content": "         -- Llegan a la cuerda para cruzarla (espera)",
+      "html_content": "         <span class=\"c1\">-- Llegan a la cuerda para cruzarla (espera)</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 31,
+      "content": "         Put_Line(\"BON DIA, soc en Babu\u00ed Nord\" & Integer'Image(i)",
+      "html_content": "         <span class=\"n\">Put_Line</span><span class=\"p\">(</span><span class=\"s\">&quot;BON DIA, soc en Babu\u00ed Nord&quot;</span> <span class=\"o\">&amp;</span> <span class=\"kt\">Integer</span><span class=\"p\">&#39;</span><span class=\"na\">Image</span><span class=\"p\">(</span><span class=\"n\">i</span><span class=\"p\">)</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 32,
+      "content": "               & \" i vaig cap al Sud\");",
+      "html_content": "               <span class=\"o\">&amp;</span> <span class=\"s\">&quot; i vaig cap al Sud&quot;</span><span class=\"p\">);</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 33,
+      "content": "",
+      "html_content": "",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 34,
+      "content": "         semBabuiNord.Wait;",
+      "html_content": "         <span class=\"n\">semBabuiNord</span><span class=\"p\">.</span><span class=\"n\">Wait</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 35,
+      "content": "         if contadorN = 0 then",
+      "html_content": "         <span class=\"kr\">if</span> <span class=\"n\">contadorN</span> <span class=\"o\">=</span> <span class=\"mi\">0</span> <span class=\"kr\">then</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 36,
+      "content": "            semCordaBuit.Wait; -- Bloqueamos Babuinos de la otra direcci\u00f3n",
+      "html_content": "            <span class=\"n\">semCordaBuit</span><span class=\"p\">.</span><span class=\"n\">Wait</span><span class=\"p\">;</span> <span class=\"c1\">-- Bloqueamos Babuinos de la otra direcci\u00f3n</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 37,
+      "content": "            contadorN := contadorN + 1;",
+      "html_content": "            <span class=\"n\">contadorN</span> <span class=\"p\">:=</span> <span class=\"n\">contadorN</span> <span class=\"o\">+</span> <span class=\"mi\">1</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 38,
+      "content": "         end if;",
+      "html_content": "         <span class=\"kr\">end</span> <span class=\"kr\">if</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 39,
+      "content": "         semBabuiNord.Signal;",
+      "html_content": "         <span class=\"n\">semBabuiNord</span><span class=\"p\">.</span><span class=\"n\">Signal</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 40,
+      "content": "",
+      "html_content": "",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 41,
+      "content": "         semContNord.Wait; -- El Babuino est\u00e1 atravesando la cuerda",
+      "html_content": "         <span class=\"n\">semContNord</span><span class=\"p\">.</span><span class=\"n\">Wait</span><span class=\"p\">;</span> <span class=\"c1\">-- El Babuino est\u00e1 atravesando la cuerda</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 42,
+      "content": "         Put_Line(\"*****A la corda n'hi ha\"",
+      "html_content": "         <span class=\"n\">Put_Line</span><span class=\"p\">(</span><span class=\"s\">&quot;*****A la corda n&#39;hi ha&quot;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 43,
+      "content": "               & Integer'Image(contadorN) & \" direcci\u00f3 Sud*****\");",
+      "html_content": "               <span class=\"o\">&amp;</span> <span class=\"kt\">Integer</span><span class=\"p\">&#39;</span><span class=\"na\">Image</span><span class=\"p\">(</span><span class=\"n\">contadorN</span><span class=\"p\">)</span> <span class=\"o\">&amp;</span> <span class=\"s\">&quot; direcci\u00f3 Sud*****&quot;</span><span class=\"p\">);</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 44,
+      "content": "",
+      "html_content": "",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 45,
+      "content": "         Put_Line(\"Nord\" & Integer'Image(i) &",
+      "html_content": "         <span class=\"n\">Put_Line</span><span class=\"p\">(</span><span class=\"s\">&quot;Nord&quot;</span> <span class=\"o\">&amp;</span> <span class=\"kt\">Integer</span><span class=\"p\">&#39;</span><span class=\"na\">Image</span><span class=\"p\">(</span><span class=\"n\">i</span><span class=\"p\">)</span> <span class=\"o\">&amp;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 46,
+      "content": "                 \": \u00c9s a la corda i travessa cap al Sud\");",
+      "html_content": "                 <span class=\"s\">&quot;: \u00c9s a la corda i travessa cap al Sud&quot;</span><span class=\"p\">);</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 47,
+      "content": "         delay 0.5; -- **Cruzando la cuerda**",
+      "html_content": "         <span class=\"kr\">delay</span> <span class=\"mf\">0.5</span><span class=\"p\">;</span> <span class=\"c1\">-- **Cruzando la cuerda**</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 48,
+      "content": "         semContNord.Signal;",
+      "html_content": "         <span class=\"n\">semContNord</span><span class=\"p\">.</span><span class=\"n\">Signal</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 49,
+      "content": "",
+      "html_content": "",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 50,
+      "content": "         semBabuiNord.Wait;",
+      "html_content": "         <span class=\"n\">semBabuiNord</span><span class=\"p\">.</span><span class=\"n\">Wait</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 51,
+      "content": "         contadorN := contadorN - 1;",
+      "html_content": "         <span class=\"n\">contadorN</span> <span class=\"p\">:=</span> <span class=\"n\">contadorN</span> <span class=\"o\">-</span> <span class=\"mi\">1</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 52,
+      "content": "         Put_Line(\"Nord\" & Integer'Image(i) & \" ha arribat a la vorera\");",
+      "html_content": "         <span class=\"n\">Put_Line</span><span class=\"p\">(</span><span class=\"s\">&quot;Nord&quot;</span> <span class=\"o\">&amp;</span> <span class=\"kt\">Integer</span><span class=\"p\">&#39;</span><span class=\"na\">Image</span><span class=\"p\">(</span><span class=\"n\">i</span><span class=\"p\">)</span> <span class=\"o\">&amp;</span> <span class=\"s\">&quot; ha arribat a la vorera&quot;</span><span class=\"p\">);</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 53,
+      "content": "",
+      "html_content": "",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 54,
+      "content": "         if contadorN = 0 then",
+      "html_content": "         <span class=\"kr\">if</span> <span class=\"n\">contadorN</span> <span class=\"o\">=</span> <span class=\"mi\">0</span> <span class=\"kr\">then</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 55,
+      "content": "            semCordaBuit.Signal;",
+      "html_content": "            <span class=\"n\">semCordaBuit</span><span class=\"p\">.</span><span class=\"n\">Signal</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 56,
+      "content": "         end if;",
+      "html_content": "         <span class=\"kr\">end</span> <span class=\"kr\">if</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 57,
+      "content": "         semBabuiNord.Signal;",
+      "html_content": "         <span class=\"n\">semBabuiNord</span><span class=\"p\">.</span><span class=\"n\">Signal</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 58,
+      "content": "",
+      "html_content": "",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 59,
+      "content": "      end loop;",
+      "html_content": "      <span class=\"kr\">end</span> <span class=\"kr\">loop</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 60,
+      "content": "   end BabuinoNord;",
+      "html_content": "   <span class=\"kr\">end</span> <span class=\"nf\">BabuinoNord</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 61,
+      "content": "",
+      "html_content": "",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 62,
+      "content": "   task body BabuinoSud is",
+      "html_content": "   <span class=\"kd\">task</span> <span class=\"kr\">body</span> <span class=\"n\">BabuinoSud</span> <span class=\"kr\">is</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 63,
+      "content": "      contadorS: Natural := 0;",
+      "html_content": "      <span class=\"n\">contadorS</span><span class=\"p\">:</span> <span class=\"kt\">Natural</span> <span class=\"p\">:=</span> <span class=\"mi\">0</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 64,
+      "content": "   begin",
+      "html_content": "   <span class=\"kr\">begin</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 65,
+      "content": "      for i in 1..5 loop",
+      "html_content": "      <span class=\"kr\">for</span> <span class=\"n\">i</span> <span class=\"ow\">in</span> <span class=\"mf\">1.</span><span class=\"p\">.</span><span class=\"mi\">5</span> <span class=\"kr\">loop</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 66,
+      "content": "         reset(gen);",
+      "html_content": "         <span class=\"n\">reset</span><span class=\"p\">(</span><span class=\"n\">gen</span><span class=\"p\">);</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 67,
+      "content": "         num:= Random(gen);",
+      "html_content": "         <span class=\"n\">num</span><span class=\"p\">:=</span> <span class=\"n\">Random</span><span class=\"p\">(</span><span class=\"n\">gen</span><span class=\"p\">);</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 68,
+      "content": "",
+      "html_content": "",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 69,
+      "content": "         -- Llegan a la cuerda para cruzarla (espera)",
+      "html_content": "         <span class=\"c1\">-- Llegan a la cuerda para cruzarla (espera)</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 70,
+      "content": "         Put_Line(\"     BON DIA, soc en Babu\u00ed Sud\" & Integer'Image(i)",
+      "html_content": "         <span class=\"n\">Put_Line</span><span class=\"p\">(</span><span class=\"s\">&quot;     BON DIA, soc en Babu\u00ed Sud&quot;</span> <span class=\"o\">&amp;</span> <span class=\"kt\">Integer</span><span class=\"p\">&#39;</span><span class=\"na\">Image</span><span class=\"p\">(</span><span class=\"n\">i</span><span class=\"p\">)</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 71,
+      "content": "               & \" i vaig cap al Nord\");",
+      "html_content": "               <span class=\"o\">&amp;</span> <span class=\"s\">&quot; i vaig cap al Nord&quot;</span><span class=\"p\">);</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 72,
+      "content": "",
+      "html_content": "",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 73,
+      "content": "         semBabuiSud.Wait;",
+      "html_content": "         <span class=\"n\">semBabuiSud</span><span class=\"p\">.</span><span class=\"n\">Wait</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 74,
+      "content": "         if contadorS = 0 then",
+      "html_content": "         <span class=\"kr\">if</span> <span class=\"n\">contadorS</span> <span class=\"o\">=</span> <span class=\"mi\">0</span> <span class=\"kr\">then</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 75,
+      "content": "            semCordaBuit.Wait; -- Bloqueamos Babuinos de la otra direcci\u00f3n",
+      "html_content": "            <span class=\"n\">semCordaBuit</span><span class=\"p\">.</span><span class=\"n\">Wait</span><span class=\"p\">;</span> <span class=\"c1\">-- Bloqueamos Babuinos de la otra direcci\u00f3n</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 76,
+      "content": "            contadorS := contadorS + 1;",
+      "html_content": "            <span class=\"n\">contadorS</span> <span class=\"p\">:=</span> <span class=\"n\">contadorS</span> <span class=\"o\">+</span> <span class=\"mi\">1</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 77,
+      "content": "         end if;",
+      "html_content": "         <span class=\"kr\">end</span> <span class=\"kr\">if</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 78,
+      "content": "         semBabuiSud.Signal;",
+      "html_content": "         <span class=\"n\">semBabuiSud</span><span class=\"p\">.</span><span class=\"n\">Signal</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 79,
+      "content": "",
+      "html_content": "",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 80,
+      "content": "         semContSud.Wait; -- El Babuino est\u00e1 atravesando la cuerda",
+      "html_content": "         <span class=\"n\">semContSud</span><span class=\"p\">.</span><span class=\"n\">Wait</span><span class=\"p\">;</span> <span class=\"c1\">-- El Babuino est\u00e1 atravesando la cuerda</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 81,
+      "content": "         Put_Line(\"     +++++A la corda n'hi ha\"",
+      "html_content": "         <span class=\"n\">Put_Line</span><span class=\"p\">(</span><span class=\"s\">&quot;     +++++A la corda n&#39;hi ha&quot;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 82,
+      "content": "               & Integer'Image(contadorS) & \" direcci\u00f3 Nord+++++\");",
+      "html_content": "               <span class=\"o\">&amp;</span> <span class=\"kt\">Integer</span><span class=\"p\">&#39;</span><span class=\"na\">Image</span><span class=\"p\">(</span><span class=\"n\">contadorS</span><span class=\"p\">)</span> <span class=\"o\">&amp;</span> <span class=\"s\">&quot; direcci\u00f3 Nord+++++&quot;</span><span class=\"p\">);</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 83,
+      "content": "",
+      "html_content": "",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 84,
+      "content": "         Put_Line(\"     Sud\" & Integer'Image(i) &",
+      "html_content": "         <span class=\"n\">Put_Line</span><span class=\"p\">(</span><span class=\"s\">&quot;     Sud&quot;</span> <span class=\"o\">&amp;</span> <span class=\"kt\">Integer</span><span class=\"p\">&#39;</span><span class=\"na\">Image</span><span class=\"p\">(</span><span class=\"n\">i</span><span class=\"p\">)</span> <span class=\"o\">&amp;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 85,
+      "content": "                 \": \u00c9s a la corda i travessa cap al Nord\");",
+      "html_content": "                 <span class=\"s\">&quot;: \u00c9s a la corda i travessa cap al Nord&quot;</span><span class=\"p\">);</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 86,
+      "content": "         delay 0.5; -- **Cruzando la cuerda**",
+      "html_content": "         <span class=\"kr\">delay</span> <span class=\"mf\">0.5</span><span class=\"p\">;</span> <span class=\"c1\">-- **Cruzando la cuerda**</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 87,
+      "content": "         semContSud.Signal;",
+      "html_content": "         <span class=\"n\">semContSud</span><span class=\"p\">.</span><span class=\"n\">Signal</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 88,
+      "content": "",
+      "html_content": "",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 89,
+      "content": "         semBabuiSud.Wait;",
+      "html_content": "         <span class=\"n\">semBabuiSud</span><span class=\"p\">.</span><span class=\"n\">Wait</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 90,
+      "content": "         contadorS := contadorS - 1;",
+      "html_content": "         <span class=\"n\">contadorS</span> <span class=\"p\">:=</span> <span class=\"n\">contadorS</span> <span class=\"o\">-</span> <span class=\"mi\">1</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 91,
+      "content": "         Put_Line(\"     Sud\" & Integer'Image(i) & \" ha arribat a la vorera\");",
+      "html_content": "         <span class=\"n\">Put_Line</span><span class=\"p\">(</span><span class=\"s\">&quot;     Sud&quot;</span> <span class=\"o\">&amp;</span> <span class=\"kt\">Integer</span><span class=\"p\">&#39;</span><span class=\"na\">Image</span><span class=\"p\">(</span><span class=\"n\">i</span><span class=\"p\">)</span> <span class=\"o\">&amp;</span> <span class=\"s\">&quot; ha arribat a la vorera&quot;</span><span class=\"p\">);</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 92,
+      "content": "",
+      "html_content": "",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 93,
+      "content": "         if contadorS = 0 then",
+      "html_content": "         <span class=\"kr\">if</span> <span class=\"n\">contadorS</span> <span class=\"o\">=</span> <span class=\"mi\">0</span> <span class=\"kr\">then</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 94,
+      "content": "            semCordaBuit.Signal;",
+      "html_content": "            <span class=\"n\">semCordaBuit</span><span class=\"p\">.</span><span class=\"n\">Signal</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 95,
+      "content": "         end if;",
+      "html_content": "         <span class=\"kr\">end</span> <span class=\"kr\">if</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 96,
+      "content": "         semBabuiSud.Signal;",
+      "html_content": "         <span class=\"n\">semBabuiSud</span><span class=\"p\">.</span><span class=\"n\">Signal</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 97,
+      "content": "",
+      "html_content": "",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 98,
+      "content": "      end loop;",
+      "html_content": "      <span class=\"kr\">end</span> <span class=\"kr\">loop</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 99,
+      "content": "   end BabuinoSud;",
+      "html_content": "   <span class=\"kr\">end</span> <span class=\"nf\">BabuinoSud</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 100,
+      "content": "",
+      "html_content": "",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 101,
+      "content": "begin",
+      "html_content": "<span class=\"kr\">begin</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 102,
+      "content": "   declare",
+      "html_content": "   <span class=\"kr\">declare</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 103,
+      "content": "      p : BabuinoNord;",
+      "html_content": "      <span class=\"n\">p</span> <span class=\"p\">:</span> <span class=\"n\">BabuinoNord</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 104,
+      "content": "      q : BabuinoSud;",
+      "html_content": "      <span class=\"n\">q</span> <span class=\"p\">:</span> <span class=\"n\">BabuinoSud</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 105,
+      "content": "   begin",
+      "html_content": "   <span class=\"kr\">begin</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 106,
+      "content": "      null;",
+      "html_content": "      <span class=\"kc\">null</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 107,
+      "content": "   end;",
+      "html_content": "   <span class=\"kr\">end</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 108,
+      "content": "",
+      "html_content": "",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 109,
+      "content": "end Babuinos;",
+      "html_content": "<span class=\"kr\">end</span> <span class=\"nf\">Babuinos</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+V "GNAT Lib v2021"
+A -x
+A ada
+A -gnatA
+A -g
+A -O2
+A -gnatc
+P GP FX
+
+RN
+RV SIMPLE_BARRIERS
+RV NO_PROTECTED_TYPES
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV MAX_PROTECTED_ENTRIES=1
+
+U def_semafors%b	def_semafors.adb	e9996f7e OO PK IL
+
+U def_semafors%s	def_semafors.ads	c10e9220 OO PK IL
+Z system%s		system.ads		system.ali
+
+D def_semafors.ads	20211206173858 c10e9220 def_semafors%s
+D def_semafors.adb	20211206173844 2897fd5e def_semafors%b
+D system.ads		20210520051134 2ffa5114 system%s
+G a Z
+X 1 def_semafors.ads
+3K9*def_semafors 10l5 10e17 2|3b14 17l5 17t17
+4W19*Semafor 4d28 9l8 9e15 2|5b19 16l8 16t15
+4i28 Inicial{natural} 8r28
+5Y13 Wait 2|6b13 9l11 9t15
+6U17 Signal 2|11b17 14l11 14t17
+8i7 Contador{natural} 2|6r23 8m10 8r22 13m10 13r22
+
+QQ SPARKVERSION SPARK Community 2021 (20210519)
+GG EK_DIRECT_CALLS def_semafors__semafor__wait 0
+GG EK_GLOBALS def_semafors__semafor__wait local FALSE E_ENTRY ORIGIN_FLOW 1 def_semafors proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE FALSE FALSE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_DIRECT_CALLS def_semafors__semafor__signal 0
+GG EK_GLOBALS def_semafors__semafor__signal local FALSE E_PROCEDURE TRUE ORIGIN_FLOW 1 def_semafors proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE FALSE FALSE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_DIRECT_CALLS def_semafors 0
+GG EK_GLOBALS def_semafors local FALSE E_PACKAGE TRUE ORIGIN_FLOW 0 proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 initializes 0 refined_initializes 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 FALSE FALSE FALSE FALSE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_FLOW_SCOPE system__Oge FALSE FALSE FALSE FALSE TRUE system VISIBLE_PART
+GG EK_FLOW_SCOPE def_semafors TRUE FALSE FALSE FALSE FALSE __standard
+GG EK_FLOW_SCOPE def_semafors__semafor FALSE FALSE FALSE FALSE TRUE def_semafors VISIBLE_PART
+GG EK_FLOW_SCOPE system__Oeq FALSE FALSE FALSE FALSE TRUE system VISIBLE_PART
+GG EK_FLOW_SCOPE def_semafors__semafor__wait FALSE FALSE FALSE FALSE TRUE def_semafors__semafor VISIBLE_PART
+GG EK_FLOW_SCOPE def_semafors__semafor__signal FALSE FALSE FALSE FALSE TRUE def_semafors__semafor VISIBLE_PART
+GG EK_FLOW_SCOPE system__Olt FALSE FALSE FALSE FALSE TRUE system VISIBLE_PART
+GG EK_FLOW_SCOPE system TRUE FALSE FALSE FALSE FALSE __standard
+GG EK_FLOW_SCOPE system__Ole FALSE FALSE FALSE FALSE TRUE system VISIBLE_PART
+GG EK_FLOW_SCOPE system__Ogt FALSE FALSE FALSE FALSE TRUE system VISIBLE_PART
+GG EK_END_MARKER

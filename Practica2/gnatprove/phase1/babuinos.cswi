@@ -1,0 +1,9 @@
+20211206174524
+-c
+-x
+ada
+-gnatA
+-g
+-O2
+-gnatc
+-gnates=C:\Users\aurad\Documents\GitHub\progConcurrenteP1\Practica2\gnatprove\bcea0293.tmp

@@ -1,4 +1,4 @@
--- AUTOR@S: LAURA CAVERO y AISHA GANDAROVA
+-- AUTOR@S: LAURA CAVERO y AYSHA GANDAROVA
 
 package def_semafors is
    protected type Semafor (Inicial: Natural) is

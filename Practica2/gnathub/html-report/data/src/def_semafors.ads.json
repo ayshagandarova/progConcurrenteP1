@@ -1,0 +1,147 @@
+{
+  "project": "Default",
+  "filename": "def_semafors.ads",
+  "source_dir": "C:\\Users\\aurad\\Documents\\GitHub\\progConcurrenteP1\\Practica2",
+  "full_path": "C:\\Users\\aurad\\Documents\\GitHub\\progConcurrenteP1\\Practica2\\def_semafors.ads",
+  "metrics": [
+    {
+      "rule": {
+        "id": 5,
+        "name": "all lines",
+        "tool_id": 2
+      },
+      "value": "10"
+    },
+    {
+      "rule": {
+        "id": 6,
+        "name": "code lines",
+        "tool_id": 2
+      },
+      "value": "8"
+    },
+    {
+      "rule": {
+        "id": 7,
+        "name": "comment lines",
+        "tool_id": 2
+      },
+      "value": "1"
+    },
+    {
+      "rule": {
+        "id": 8,
+        "name": "end-of-line comments",
+        "tool_id": 2
+      },
+      "value": "0"
+    },
+    {
+      "rule": {
+        "id": 9,
+        "name": "comment percentage",
+        "tool_id": 2
+      },
+      "value": "11.11"
+    },
+    {
+      "rule": {
+        "id": 10,
+        "name": "blank lines",
+        "tool_id": 2
+      },
+      "value": "1"
+    },
+    {
+      "rule": {
+        "id": 11,
+        "name": "Average lines in body",
+        "tool_id": 2
+      },
+      "value": "0.00"
+    },
+    {
+      "rule": {
+        "id": 12,
+        "name": "spark lines",
+        "tool_id": 2
+      },
+      "value": "0"
+    }
+  ],
+  "coverage": null,
+  "messages": null,
+  "annotations": null,
+  "lines": [
+    {
+      "number": 1,
+      "content": "-- AUTOR@S: LAURA CAVERO y AYSHA GANDAROVA",
+      "html_content": "<span class=\"c1\">-- AUTOR@S: LAURA CAVERO y AYSHA GANDAROVA</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 2,
+      "content": "",
+      "html_content": "",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 3,
+      "content": "package def_semafors is",
+      "html_content": "<span class=\"kd\">package</span> <span class=\"nc\">def_semafors</span> <span class=\"kr\">is</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 4,
+      "content": "   protected type Semafor (Inicial: Natural) is",
+      "html_content": "   <span class=\"kd\">protected</span> <span class=\"kd\">type</span> <span class=\"kt\">Semafor</span> <span class=\"p\">(</span><span class=\"nv\">Inicial</span><span class=\"p\">: </span><span class=\"nv\">Natural</span><span class=\"p\">)</span> <span class=\"kr\">is</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 5,
+      "content": "      entry Wait;",
+      "html_content": "      <span class=\"kd\">entry</span> <span class=\"nf\">Wait</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 6,
+      "content": "      procedure Signal;",
+      "html_content": "      <span class=\"kd\">procedure</span> <span class=\"nf\">Signal</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 7,
+      "content": "   private",
+      "html_content": "   <span class=\"kd\">private</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 8,
+      "content": "      Contador: Natural := Inicial;",
+      "html_content": "      <span class=\"n\">Contador</span><span class=\"p\">:</span> <span class=\"kt\">Natural</span> <span class=\"p\">:=</span> <span class=\"n\">Inicial</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 9,
+      "content": "   end Semafor;",
+      "html_content": "   <span class=\"kr\">end</span> <span class=\"nf\">Semafor</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    },
+    {
+      "number": 10,
+      "content": "end def_semafors;",
+      "html_content": "<span class=\"kr\">end</span> <span class=\"nf\">def_semafors</span><span class=\"p\">;</span>",
+      "coverage": null,
+      "messages": null
+    }
+  ]
+}

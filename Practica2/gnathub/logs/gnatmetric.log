@@ -1,0 +1,39 @@
+Units remaining: 3     Units remaining: 2     Units remaining: 1     Line metrics summed over 3 units
+  all lines            : 136
+  code lines           : 104
+  comment lines        : 5
+  end-of-line comments : 6
+  comment percentage   : 10.09
+  blank lines          : 27
+
+Average lines in body: 17.79
+
+Element metrics summed over 3 units
+  all statements      : 44
+  all declarations    : 30
+  logical SLOC        : 74
+
+ 1 public types in 1 units
+
+ 4 type declarations in 2 units
+
+ 2 public subprograms in 2 units
+
+ 2 subprogram bodies in 2 units
+
+Average cyclomatic complexity: 2.20
+
+Coupling metrics:
+=================
+   Unit Babuinos (C:\Users\aurad\Documents\GitHub\progConcurrenteP1\Practica2\babuinos.adb)
+      control fan-out coupling  : 1
+      control fan-in coupling   : 0
+      unit fan-out coupling     : 1
+      unit fan-in coupling      : 0
+
+   Unit def_semafors (C:\Users\aurad\Documents\GitHub\progConcurrenteP1\Practica2\def_semafors.ads)
+      control fan-out coupling  : 0
+      control fan-in coupling   : 1
+      unit fan-out coupling     : 0
+      unit fan-in coupling      : 1
+

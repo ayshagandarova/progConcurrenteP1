@@ -1,4 +1,4 @@
--- AUTOR@S: LAURA CAVERO y AISHA GANDAROVA
+-- AUTOR@S: LAURA CAVERO y AYSHA GANDAROVA
 
 package body def_semafors is
 

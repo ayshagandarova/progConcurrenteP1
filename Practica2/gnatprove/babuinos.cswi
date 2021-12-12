@@ -1,0 +1,9 @@
+20211206174526
+-c
+-x
+ada
+-gnatA
+-g
+-O2
+-gnatc
+-gnates=C:\Users\aurad\Documents\GitHub\progConcurrenteP1\Practica2\gnatprove\4a86fb3a.tmp

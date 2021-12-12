@@ -1,0 +1,34 @@
+{
+  "sources": [
+    {
+      "projectName": "Default",
+      "filename": "babuinos.adb",
+      "source_dir": "C:\\Users\\aurad\\Documents\\GitHub\\progConcurrenteP1\\Practica2",
+      "full_path": "C:\\Users\\aurad\\Documents\\GitHub\\progConcurrenteP1\\Practica2\\babuinos.adb",
+      "messages": null,
+      "coverage": null,
+      "message_count": {},
+      "_total_message_count": 0
+    },
+    {
+      "projectName": "Default",
+      "filename": "def_semafors.adb",
+      "source_dir": "C:\\Users\\aurad\\Documents\\GitHub\\progConcurrenteP1\\Practica2",
+      "full_path": "C:\\Users\\aurad\\Documents\\GitHub\\progConcurrenteP1\\Practica2\\def_semafors.adb",
+      "messages": null,
+      "coverage": null,
+      "message_count": {},
+      "_total_message_count": 0
+    },
+    {
+      "projectName": "Default",
+      "filename": "def_semafors.ads",
+      "source_dir": "C:\\Users\\aurad\\Documents\\GitHub\\progConcurrenteP1\\Practica2",
+      "full_path": "C:\\Users\\aurad\\Documents\\GitHub\\progConcurrenteP1\\Practica2\\def_semafors.ads",
+      "messages": null,
+      "coverage": null,
+      "message_count": {},
+      "_total_message_count": 0
+    }
+  ]
+}

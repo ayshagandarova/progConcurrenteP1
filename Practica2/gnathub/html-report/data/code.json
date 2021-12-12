@@ -1,0 +1,39 @@
+{
+  "modules": [
+    {
+      "name": "Default",
+      "source_dirs": [
+        {
+          "name": "C:\\Users\\aurad\\Documents\\GitHub\\progConcurrenteP1\\Practica2",
+          "sources": [
+            {
+              "filename": "babuinos.adb",
+              "coverage": null,
+              "message_count": {},
+              "_total_message_count": 0
+            },
+            {
+              "filename": "def_semafors.adb",
+              "coverage": null,
+              "message_count": {},
+              "_total_message_count": 0
+            },
+            {
+              "filename": "def_semafors.ads",
+              "coverage": null,
+              "message_count": {},
+              "_total_message_count": 0
+            }
+          ],
+          "coverage": null,
+          "message_count": null,
+          "_total_message_count": 0
+        }
+      ],
+      "coverage": null,
+      "message_count": null,
+      "_total_message_count": 0,
+      "_source_dirs_common_prefix": "C:\\Users\\aurad\\Documents\\GitHub\\progConcurrenteP1"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "spark": [
+    {
+      "name": "Babuinos",
+      "sloc": [
+        {
+          "file": "babuinos.adb",
+          "line": 7
+        }
+      ],
+      "spark": "no"
+    }
+  ],
+  "flow": [
+  ],
+  "session_map": {
+  },
+  "proof": [
+  ],
+  "assumptions": [
+  ],
+  "timings": {
+    "codepeer results": 1.35000000227592E-05,
+    "init_why_sections": 7.45599973015487E-04,
+    "globals (advanced)": 3.43254990875721E-02,
+    "flow analysis": 1.61999996635132E-04,
+    "marking": 1.08200001704972E-04,
+    "translation of standard": 4.28749993443489E-03,
+    "properties (advanced)": 3.78000004275236E-05,
+    "globals (basic)": 3.45841981470585E-02
+  }
+}

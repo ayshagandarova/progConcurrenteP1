@@ -1,0 +1,128 @@
+Metrics computed for C:\Users\aurad\Documents\GitHub\progConcurrenteP1\Practica2\babuinos.adb
+containing procedure body Babuinos
+
+=== Code line metrics ===
+  all lines           : 109
+  code lines          : 84
+  comment lines       : 3
+  end-of-line comments: 6
+  comment percentage  : 10.34
+  blank lines         : 22
+
+Average lines in body: 47.00
+
+Babuinos (procedure body - library item at lines  7: 109)
+
+=== Code line metrics ===
+   all lines           : 103
+   code lines          : 81
+   comment lines       : 2
+   end-of-line comments: 6
+   comment percentage  : 9.63
+   blank lines         : 20
+
+=== Element metrics ===
+   all type definitions     : 3
+   public subprograms       : 1
+   all subprogram bodies    : 1
+   all statements           : 42
+   all declarations         : 20
+   logical SLOC             : 62
+   maximal unit nesting     : 1
+   maximal construct nesting: 4
+   all parameters           : 0
+
+=== Complexity metrics ===
+   statement complexity     : 1
+   expression complexity    : 0
+   cyclomatic complexity    : 1
+   essential complexity     : 1
+   maximum loop nesting     : 0
+   extra exit points        : 0
+
+   BabuinoNord (task type at lines  20: 20)
+
+   === Code line metrics ===
+      all lines           : 1
+      code lines          : 1
+      comment lines       : 0
+      end-of-line comments: 0
+      comment percentage  : 0.00
+      blank lines         : 0
+
+   === Element metrics ===
+      all statements           : 0
+      all declarations         : 1
+      logical SLOC             : 1
+      maximal construct nesting: 1
+
+   BabuinoSud (task type at lines  21: 21)
+
+   === Code line metrics ===
+      all lines           : 1
+      code lines          : 1
+      comment lines       : 0
+      end-of-line comments: 0
+      comment percentage  : 0.00
+      blank lines         : 0
+
+   === Element metrics ===
+      all statements           : 0
+      all declarations         : 1
+      logical SLOC             : 1
+      maximal construct nesting: 1
+
+   BabuinoNord (task body at lines  23: 60)
+
+   === Code line metrics ===
+      all lines           : 38
+      code lines          : 30
+      comment lines       : 1
+      end-of-line comments: 3
+      comment percentage  : 12.90
+      blank lines         : 7
+
+   === Element metrics ===
+      all statements           : 20
+      all declarations         : 3
+      logical SLOC             : 23
+      maximal construct nesting: 3
+
+   === Complexity metrics ===
+      statement complexity     : 4
+      expression complexity    : 0
+      cyclomatic complexity    : 4
+      essential complexity     : 1
+      maximum loop nesting     : 1
+      extra exit points        : 0
+
+   BabuinoSud (task body at lines  62: 99)
+
+   === Code line metrics ===
+      all lines           : 38
+      code lines          : 30
+      comment lines       : 1
+      end-of-line comments: 3
+      comment percentage  : 12.90
+      blank lines         : 7
+
+   === Element metrics ===
+      all statements           : 20
+      all declarations         : 3
+      logical SLOC             : 23
+      maximal construct nesting: 3
+
+   === Complexity metrics ===
+      statement complexity     : 4
+      expression complexity    : 0
+      cyclomatic complexity    : 4
+      essential complexity     : 1
+      maximum loop nesting     : 1
+      extra exit points        : 0
+
+=== Average complexity metrics ===
+      statement_complexity     :  3.00
+      expression_complexity    :  0.00
+      cyclomatic_complexity    :  3.00
+      essential_complexity     :  1.00
+      max_loop_nesting         :  1.00
